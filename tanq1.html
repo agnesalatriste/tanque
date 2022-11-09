@@ -1,0 +1,317 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>UNIVERSIDAD NACIONAL AUT&Oacute;NOMA DE M&Eacute;XICO</title><meta name="generator" content="MATLAB 9.13"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-11-09"><meta name="DC.source" content="tanq1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>UNIVERSIDAD NACIONAL AUT&Oacute;NOMA DE M&Eacute;XICO</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">FACULTAD DE ESTUDIOS SUPERIORES ARAG&Oacute;N</a></li><li><a href="#2">DINAMICA DE SISTEMAS FISICOS</a></li><li><a href="#3">SISTEMA DE PRIMER ORDEN HIDRAULICO</a></li><li><a href="#4">PROFESOR: GERARDO</a></li><li><a href="#5">ALUMNOS: ALATRISTE VALENZUELA AGNES PAOLA, BADILLO LOZADA EDUARDO JAVIER</a></li><li><a href="#6">se limpia todo, esto nos sirve para corridas subsecuentes en el mismo script</a></li><li><a href="#7">Variables del tanque</a></li><li><a href="#8">Gr&aacute;fica no lineal del comportamiento del nivel manipulando la v&aacute;lvula de entrada y dejando la v&aacute;lvula de salida constante y viceversa</a></li><li><a href="#9">Graficaci&oacute;n</a></li><li><a href="#10">Proceso de simulaci&oacute;n</a></li><li><a href="#11">Graficaci&oacute;n de resultados</a></li></ul></div><h2 id="1">FACULTAD DE ESTUDIOS SUPERIORES ARAG&Oacute;N</h2><h2 id="2">DINAMICA DE SISTEMAS FISICOS</h2><h2 id="3">SISTEMA DE PRIMER ORDEN HIDRAULICO</h2><h2 id="4">PROFESOR: GERARDO</h2><h2 id="5">ALUMNOS: ALATRISTE VALENZUELA AGNES PAOLA, BADILLO LOZADA EDUARDO JAVIER</h2><h2 id="6">se limpia todo, esto nos sirve para corridas subsecuentes en el mismo script</h2><pre class="codeinput">clc <span class="comment">%limpia el texto de la ventana de comandos</span>
+clear <span class="string">all</span> <span class="comment">%limpia todas la variables que se usaran en el c&oacute;digo</span>
+close <span class="string">all</span> <span class="comment">% cierra las figuras</span>
+</pre><h2 id="7">Variables del tanque</h2><pre class="codeinput">k1=0.05; <span class="comment">%constante 1</span>
+k2=0.015; <span class="comment">%constante 2</span>
+g=10; <span class="comment">%gravedad</span>
+A=0.5; <span class="comment">%&aacute;rea del tanque (cil&iacute;ndrico)</span>
+<span class="comment">%abertura de la v&aacute;lvula de entrada</span>
+a1=0.0:0.1:1;   <span class="comment">%se declara la variable a1 como estado inical:incremento:estado final</span>
+<span class="comment">%abertura de la v&aacute;lvula de salida</span>
+a2=0:0.1:1;     <span class="comment">%se declara la variable a2 como estado inical:incremento:estado final</span>
+k=1; <span class="comment">%constante</span>
+A1o=0.6; <span class="comment">%Abertura de equilibrio en la v&aacute;lvula de entrada</span>
+A2o=0.5; <span class="comment">%Abertura de equil&iacute;brio en la v&aacute;lvula de salida</span>
+<span class="comment">%Punto de equilibrio del tanque</span>
+Ho=(k1^2*A1o^2)/(k2^2*A2o^2*2*g); <span class="comment">%ecuaci&oacute;n encontrada previamente</span>
+</pre><h2 id="8">Gr&aacute;fica no lineal del comportamiento del nivel manipulando la v&aacute;lvula de entrada y dejando la v&aacute;lvula de salida constante y viceversa</h2><pre class="codeinput"><span class="comment">%ciclo for para calcular la altura</span>
+<span class="keyword">for</span> i=1:11 <span class="comment">%variable i de 1 a 11, con incrementos de 1</span>
+       hA1(i)=(k1^2*a1(i)^2)/(k2^2*A2o^2*2*g); <span class="comment">%se obtiene la altura para cuando varia A1(0:0.1:1) y A2 se mantiene constante en la abertura de equilibrio(A2o)</span>
+       hA2(i)=(k1^2*A1o^2)/(k2^2*a2(i)^2*2*g); <span class="comment">%se obtiene la altura para cuando varia A2(0:0.1:1) y A1 se mantiene constante en la abertura de equilibrio(A1o)</span>
+       k=k+1; <span class="comment">%se incrementa la constante k en 1 con cada iteraci&oacute;n</span>
+<span class="keyword">end</span> <span class="comment">% fin del ciclo for</span>
+</pre><h2 id="9">Graficaci&oacute;n</h2><pre class="codeinput">figure <span class="comment">%se crea una ventana de figura</span>
+t=0:0.1:1; <span class="comment">%se declara la variable t cuyo estado inicial es 0 y tendra incrementos de 0.1 hasta 1</span>
+
+<span class="comment">%gr&aacute;fica 1, cuando la v&aacute;lvula de salida se mantiene constante</span>
+subplot(2,1,1); <span class="comment">%divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p)</span>
+plot(t,hA1) <span class="comment">%toma los valores para la grafica de t en el eje x y hA1 en el eje y, el color de la gr&aacute;fica</span>
+grid <span class="string">on</span> <span class="comment">%se cuadriculan los ejes</span>
+grid <span class="string">minor</span> <span class="comment">%subcuadriculas de los ejes</span>
+ax = gca; <span class="comment">% ejes actuales</span>
+ax.XColor = <span class="string">"#7E2F8E"</span>; <span class="comment">%color del eje x</span>
+ax.YColor = <span class="string">"#EDB120"</span>; <span class="comment">%color del eje y</span>
+ax.GridColor = <span class="string">"#77AC30"</span>; <span class="comment">%color de las cuadriculas principales</span>
+ax.GridAlpha = 0.3; <span class="comment">%transparencia de las cuadriculas</span>
+axis([0 1 0 1]); <span class="comment">%limites del eje siendo [ejeinfx ejesupx ejeinfy ejesupy]</span>
+title(<span class="string">'Variaci&oacute;n en la V&aacute;lvula de Entrada(a1)'</span>,<span class="string">'FontSize'</span>,14,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'Color'</span>,<span class="string">"#D95319"</span>); <span class="comment">%titulo de la gr&aacute;fica 1</span>
+ylabel(<span class="string">'Altura (h)'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje y en la gr&aacute;fica 1</span>
+xlabel(<span class="string">'Abertura de la V&aacute;lvula a1'</span> ,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje x en la gr&aacute;fica 1</span>
+
+<span class="comment">%gr&aacute;fica 2, cuando la v&aacute;lvula de entrada de mantiene constante</span>
+subplot(2,1,2);
+plot(t,hA2) <span class="comment">%toma los valores para la grafica de t en el eje x y hA1 en el eje y</span>
+grid <span class="string">on</span> <span class="comment">%se cuadriculan los ejes</span>
+grid <span class="string">minor</span> <span class="comment">%subcuadriculas de los ejes</span>
+ax = gca; <span class="comment">% ejes actuales</span>
+ax.XColor = <span class="string">"#7E2F8E"</span>; <span class="comment">%color del eje x</span>
+ax.YColor = <span class="string">"#EDB120"</span>; <span class="comment">%color del eje y</span>
+ax.GridColor = <span class="string">"#77AC30"</span>; <span class="comment">%color de las cuadriculas principales</span>
+ax.GridAlpha = 0.3; <span class="comment">%transparencia de las cuadriculas</span>
+axis([0 1 0 1]);
+title(<span class="string">'Variaci&oacute;n en la V&aacute;lvula de Salida(a2)'</span>,<span class="string">'FontSize'</span>,14,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'Color'</span>,<span class="string">"#D95319"</span>); <span class="comment">%titulo de la gr&aacute;fica 2</span>
+ylabel(<span class="string">'Altura (h)'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje y en la gr&aacute;fica 2</span>
+xlabel(<span class="string">'Abertura de la V&aacute;lvula a2'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>);<span class="comment">%etiqueta del eje x en la gr&aacute;fica 2</span>
+</pre><img vspace="5" hspace="5" src="tanq1_01.png" alt=""> <h2 id="10">Proceso de simulaci&oacute;n</h2><pre class="codeinput"><span class="comment">%variables de simulaci&oacute;n</span>
+tsim=300;       <span class="comment">%tiempo de simulacion</span>
+tA1=10;         <span class="comment">%tiempo de variaci&oacute;n de a1</span>
+tA2=150;        <span class="comment">%Tiempo dr variaci&oacute;n de a2</span>
+dA1=0.02;       <span class="comment">%Variaci&oacute;n en valores iniciales de a1 (A1o)</span>
+dA2=0.03;       <span class="comment">%Variaci&oacute;n en valores iniciales de a2 (A2o)</span>
+
+<span class="comment">%Simulaci&oacute;n</span>
+sim(<span class="string">'tanque'</span>); <span class="comment">%se simula el tanque que se maqueto previamente en simulink</span>
+</pre><pre class="codeoutput">Warning: Model '&lt;a href="matlab:open_system ('tanque')"&gt;tanque&lt;/a&gt;' is using a
+default value of 6.0 for maximum step size. You can disable this diagnostic by
+setting &lt;a
+href="matlab:configset.internal.open('tanque','SolverPrmCheckMsg');"&gt;Automatic
+solver parameter selection&lt;/a&gt; to 'none' 
+</pre><img vspace="5" hspace="5" src="tanq1_02.png" alt=""> <h2 id="11">Graficaci&oacute;n de resultados</h2><pre class="codeinput">figure <span class="comment">%se crea una ventana de figura</span>
+
+<span class="comment">% gr&aacute;fica 1</span>
+subplot(3,1,1); <span class="comment">%divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p), se trabaja sobre el cuadrante 1</span>
+plot(t,rY(:,1),t,rY(:,3)) <span class="comment">%toma los valores para la grafica de t en el eje x y hA1 en el eje y</span>
+grid <span class="string">on</span> <span class="comment">%se cuadriculan los ejes</span>
+grid <span class="string">minor</span> <span class="comment">%subcuadriculas de los ejes</span>
+ax = gca; <span class="comment">% ejes actuales</span>
+ax.XColor = <span class="string">"#7E2F8E"</span>; <span class="comment">%color del eje x</span>
+ax.YColor = <span class="string">"#EDB120"</span>; <span class="comment">%color del eje y</span>
+ax.GridColor = <span class="string">"#77AC30"</span>; <span class="comment">%color de las cuadriculas principales</span>
+ax.GridAlpha = 0.3; <span class="comment">%transparencia de las cuadriculas</span>
+title(<span class="string">'Nivel del Tanque'</span>,<span class="string">'FontSize'</span>,14,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'Color'</span>,<span class="string">"#D95319"</span>); <span class="comment">%titulo de la gr&aacute;fica 1</span>
+ylabel(<span class="string">'Altura (h)'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje y en la gr&aacute;fica 1</span>
+xlabel(<span class="string">'Tiempo (s)'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje x en la gr&aacute;fica 1</span>
+legend(<span class="string">'No lineal'</span>,<span class="string">'Lineal'</span>); <span class="comment">%leyenda de las graficas lineal y no lineal</span>
+
+<span class="comment">% gr&aacute;fica 2</span>
+subplot(3,1,2); <span class="comment">%divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p), se trabaja sobre el cuadrante 2</span>
+plot(t,rY(:,2)) <span class="comment">%toma los valores para la grafica de t en el eje x y hA1 en el eje y</span>
+grid <span class="string">on</span> <span class="comment">%se cuadriculan los ejes</span>
+grid <span class="string">minor</span> <span class="comment">%subcuadriculas de los ejes</span>
+ax = gca; <span class="comment">% ejes actuales</span>
+ax.XColor = <span class="string">"#7E2F8E"</span>; <span class="comment">%color del eje x</span>
+ax.YColor = <span class="string">"#EDB120"</span>; <span class="comment">%color del eje y</span>
+ax.GridColor = <span class="string">"#77AC30"</span>; <span class="comment">%color de las cuadriculas principales</span>
+ax.GridAlpha = 0.3; <span class="comment">%transparencia de las cuadriculas</span>
+title(<span class="string">'Abertura en a1'</span> ,<span class="string">'FontSize'</span>,14,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'Color'</span>,<span class="string">"#D95319"</span>); <span class="comment">%titulo de la gr&aacute;fica 2</span>
+ylabel(<span class="string">'% a1'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje y en la gr&aacute;fica 2</span>
+xlabel(<span class="string">'Tiempo (s)'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje x en la gr&aacute;fica 2</span>
+
+<span class="comment">% gr&aacute;fica 3</span>
+subplot(3,1,3); <span class="comment">%divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p), se trabaja sobre el cuadrante 3</span>
+plot(t,rY(:,4)) <span class="comment">%toma los valores para la grafica de t en el eje x y hA1 en el eje y</span>
+grid <span class="string">on</span> <span class="comment">%se cuadriculan los ejes</span>
+grid <span class="string">minor</span> <span class="comment">%subcuadriculas de los ejes</span>
+ax = gca; <span class="comment">% ejes actuales</span>
+ax.XColor = <span class="string">"#7E2F8E"</span>; <span class="comment">%color del eje x</span>
+ax.YColor = <span class="string">"#EDB120"</span>; <span class="comment">%color del eje y</span>
+ax.GridColor = <span class="string">"#77AC30"</span>; <span class="comment">%color de las cuadriculas principales</span>
+ax.GridAlpha = 0.3; <span class="comment">%transparencia de las cuadriculas</span>
+title(<span class="string">'Abertura en a2'</span>,<span class="string">'FontSize'</span>,14,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'Color'</span>,<span class="string">"#D95319"</span>); <span class="comment">%titulo de la gr&aacute;fica 3</span>
+ylabel(<span class="string">'% a2'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje y en la gr&aacute;fica 3</span>
+xlabel(<span class="string">'Tiempo (s)'</span>,<span class="string">'FontSize'</span>,11,<span class="string">'FontWeight'</span>,<span class="string">'normal'</span>,<span class="string">'FontAngle'</span>,<span class="string">'italic'</span>,<span class="string">'Color'</span>,<span class="string">"#0072BD"</span>); <span class="comment">%etiqueta del eje x en la gr&aacute;fica 3</span>
+
+clc <span class="comment">%limpia el texto de la ventana de comandos</span>
+</pre><img vspace="5" hspace="5" src="tanq1_03.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2022b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
+%% FACULTAD DE ESTUDIOS SUPERIORES ARAGÓN
+%% DINAMICA DE SISTEMAS FISICOS
+%% SISTEMA DE PRIMER ORDEN HIDRAULICO
+%% PROFESOR: GERARDO
+%% ALUMNOS: ALATRISTE VALENZUELA AGNES PAOLA, BADILLO LOZADA EDUARDO JAVIER
+
+%% se limpia todo, esto nos sirve para corridas subsecuentes en el mismo script
+clc %limpia el texto de la ventana de comandos
+clear all %limpia todas la variables que se usaran en el código
+close all % cierra las figuras
+
+%% Variables del tanque
+k1=0.05; %constante 1
+k2=0.015; %constante 2
+g=10; %gravedad
+A=0.5; %área del tanque (cilíndrico)
+%abertura de la válvula de entrada
+a1=0.0:0.1:1;   %se declara la variable a1 como estado inical:incremento:estado final
+%abertura de la válvula de salida
+a2=0:0.1:1;     %se declara la variable a2 como estado inical:incremento:estado final
+k=1; %constante
+A1o=0.6; %Abertura de equilibrio en la válvula de entrada
+A2o=0.5; %Abertura de equilíbrio en la válvula de salida
+%Punto de equilibrio del tanque
+Ho=(k1^2*A1o^2)/(k2^2*A2o^2*2*g); %ecuación encontrada previamente
+
+%% Gráfica no lineal del comportamiento del nivel manipulando la válvula de entrada y dejando la válvula de salida constante y viceversa
+
+%ciclo for para calcular la altura
+for i=1:11 %variable i de 1 a 11, con incrementos de 1  
+       hA1(i)=(k1^2*a1(i)^2)/(k2^2*A2o^2*2*g); %se obtiene la altura para cuando varia A1(0:0.1:1) y A2 se mantiene constante en la abertura de equilibrio(A2o)
+       hA2(i)=(k1^2*A1o^2)/(k2^2*a2(i)^2*2*g); %se obtiene la altura para cuando varia A2(0:0.1:1) y A1 se mantiene constante en la abertura de equilibrio(A1o)
+       k=k+1; %se incrementa la constante k en 1 con cada iteración
+end % fin del ciclo for
+
+%% Graficación 
+figure %se crea una ventana de figura
+t=0:0.1:1; %se declara la variable t cuyo estado inicial es 0 y tendra incrementos de 0.1 hasta 1
+
+%gráfica 1, cuando la válvula de salida se mantiene constante
+subplot(2,1,1); %divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p)
+plot(t,hA1) %toma los valores para la grafica de t en el eje x y hA1 en el eje y, el color de la gráfica
+grid on %se cuadriculan los ejes
+grid minor %subcuadriculas de los ejes
+ax = gca; % ejes actuales
+ax.XColor = "#7E2F8E"; %color del eje x
+ax.YColor = "#EDB120"; %color del eje y
+ax.GridColor = "#77AC30"; %color de las cuadriculas principales
+ax.GridAlpha = 0.3; %transparencia de las cuadriculas
+axis([0 1 0 1]); %limites del eje siendo [ejeinfx ejesupx ejeinfy ejesupy]
+title('Variación en la Válvula de Entrada(a1)','FontSize',14,'FontWeight','bold','Color',"#D95319"); %titulo de la gráfica 1
+ylabel('Altura (h)','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje y en la gráfica 1
+xlabel('Abertura de la Válvula a1' ,'FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje x en la gráfica 1
+
+%gráfica 2, cuando la válvula de entrada de mantiene constante
+subplot(2,1,2);
+plot(t,hA2) %toma los valores para la grafica de t en el eje x y hA1 en el eje y
+grid on %se cuadriculan los ejes
+grid minor %subcuadriculas de los ejes
+ax = gca; % ejes actuales
+ax.XColor = "#7E2F8E"; %color del eje x
+ax.YColor = "#EDB120"; %color del eje y
+ax.GridColor = "#77AC30"; %color de las cuadriculas principales
+ax.GridAlpha = 0.3; %transparencia de las cuadriculas
+axis([0 1 0 1]);
+title('Variación en la Válvula de Salida(a2)','FontSize',14,'FontWeight','bold','Color',"#D95319"); %titulo de la gráfica 2
+ylabel('Altura (h)','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje y en la gráfica 2
+xlabel('Abertura de la Válvula a2','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD");%etiqueta del eje x en la gráfica 2
+
+%% Proceso de simulación
+
+%variables de simulación
+tsim=300;       %tiempo de simulacion 
+tA1=10;         %tiempo de variación de a1
+tA2=150;        %Tiempo dr variación de a2
+dA1=0.02;       %Variación en valores iniciales de a1 (A1o)
+dA2=0.03;       %Variación en valores iniciales de a2 (A2o)
+
+%Simulación
+sim('tanque'); %se simula el tanque que se maqueto previamente en simulink
+
+%% Graficación de resultados
+
+figure %se crea una ventana de figura
+
+% gráfica 1
+subplot(3,1,1); %divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p), se trabaja sobre el cuadrante 1
+plot(t,rY(:,1),t,rY(:,3)) %toma los valores para la grafica de t en el eje x y hA1 en el eje y
+grid on %se cuadriculan los ejes
+grid minor %subcuadriculas de los ejes
+ax = gca; % ejes actuales
+ax.XColor = "#7E2F8E"; %color del eje x
+ax.YColor = "#EDB120"; %color del eje y
+ax.GridColor = "#77AC30"; %color de las cuadriculas principales
+ax.GridAlpha = 0.3; %transparencia de las cuadriculas
+title('Nivel del Tanque','FontSize',14,'FontWeight','bold','Color',"#D95319"); %titulo de la gráfica 1
+ylabel('Altura (h)','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje y en la gráfica 1
+xlabel('Tiempo (s)','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje x en la gráfica 1
+legend('No lineal','Lineal'); %leyenda de las graficas lineal y no lineal
+
+% gráfica 2
+subplot(3,1,2); %divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p), se trabaja sobre el cuadrante 2
+plot(t,rY(:,2)) %toma los valores para la grafica de t en el eje x y hA1 en el eje y
+grid on %se cuadriculan los ejes
+grid minor %subcuadriculas de los ejes
+ax = gca; % ejes actuales
+ax.XColor = "#7E2F8E"; %color del eje x
+ax.YColor = "#EDB120"; %color del eje y
+ax.GridColor = "#77AC30"; %color de las cuadriculas principales
+ax.GridAlpha = 0.3; %transparencia de las cuadriculas
+title('Abertura en a1' ,'FontSize',14,'FontWeight','bold','Color',"#D95319"); %titulo de la gráfica 2
+ylabel('% a1','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje y en la gráfica 2
+xlabel('Tiempo (s)','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje x en la gráfica 2
+
+% gráfica 3
+subplot(3,1,3); %divide la figura en cuadricula de m x n y crea ejes en p, recibe (m,n,p), se trabaja sobre el cuadrante 3
+plot(t,rY(:,4)) %toma los valores para la grafica de t en el eje x y hA1 en el eje y
+grid on %se cuadriculan los ejes
+grid minor %subcuadriculas de los ejes
+ax = gca; % ejes actuales
+ax.XColor = "#7E2F8E"; %color del eje x
+ax.YColor = "#EDB120"; %color del eje y
+ax.GridColor = "#77AC30"; %color de las cuadriculas principales
+ax.GridAlpha = 0.3; %transparencia de las cuadriculas
+title('Abertura en a2','FontSize',14,'FontWeight','bold','Color',"#D95319"); %titulo de la gráfica 3
+ylabel('% a2','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje y en la gráfica 3
+xlabel('Tiempo (s)','FontSize',11,'FontWeight','normal','FontAngle','italic','Color',"#0072BD"); %etiqueta del eje x en la gráfica 3
+
+clc %limpia el texto de la ventana de comandos
+##### SOURCE END #####
+--></body></html>
